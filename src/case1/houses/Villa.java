@@ -8,6 +8,7 @@ public class Villa extends House {
     public Villa(){
 
     }
+    
     public Villa(long id, BigDecimal price, int numberOfRooms, int numberOfLivingRooms, int squareMeters){
         this.setId(id);
         this.setPrice(price);

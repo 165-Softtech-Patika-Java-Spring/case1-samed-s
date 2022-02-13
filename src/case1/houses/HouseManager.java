@@ -5,6 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HouseManager {
+    private List<House> houseList;
+    private List<Villa> villaList;
+    private List<SummerHouse> summerHouseList;
+
+    public HouseManager(){
+        houseList = new ArrayList<>();
+        villaList = new ArrayList<>();
+        summerHouseList = new ArrayList<>();
+
+        addHousesToHouseList();
+        addVillasToVillaList();
+        addSummerHousesToSummerHouseList();
+    }
+
     public List<House> getAllHouseList(){
         List<House> fullList = new ArrayList<>();
         fullList.addAll(getHouseList());
@@ -13,9 +27,19 @@ public class HouseManager {
         return fullList;
     }
 
-    public List<House> getHouseList(){
-        List<House> houseList = new ArrayList<>();
+    public List<House> getHouseList() {
+        return houseList;
+    }
 
+    public List<Villa> getVillaList() {
+        return villaList;
+    }
+
+    public List<SummerHouse> getSummerHouseList() {
+        return summerHouseList;
+    }
+
+    private void addHousesToHouseList(){
         House houseOne = new House();
         houseOne.setId(100L);
         houseOne.setSquareMeters(110);
@@ -34,13 +58,9 @@ public class HouseManager {
 
         houseList.add(new House(102L,new BigDecimal(2350000),4,1,210));
         houseList.add(new House(103L,new BigDecimal(770000),2,1,100));
-
-        return houseList;
     }
 
-    public List<Villa> getVillaList(){
-        List<Villa> villaList = new ArrayList<>();
-
+    private void addVillasToVillaList(){
         Villa villaOne = new Villa();
         villaOne.setId(1L);
         villaOne.setSquareMeters(220);
@@ -59,13 +79,9 @@ public class HouseManager {
 
         villaList.add(new Villa(3L,new BigDecimal(2900000),4,1,216));
         villaList.add(new Villa(4L,new BigDecimal(940000),3,1,200));
-
-        return villaList;
     }
 
-    public List<SummerHouse> getSummerHouseList(){
-        List<SummerHouse> summerHouseList = new ArrayList<>();
-
+    private void addSummerHousesToSummerHouseList(){
         SummerHouse summerHouseOne = new SummerHouse();
         summerHouseOne.setId(10L);
         summerHouseOne.setSquareMeters(190);
@@ -84,7 +100,5 @@ public class HouseManager {
 
         summerHouseList.add(new SummerHouse(12L,new BigDecimal(2150000),5,1,320));
         summerHouseList.add(new SummerHouse(13L,new BigDecimal(1250000),4,1,190));
-
-        return summerHouseList;
     }
 }
